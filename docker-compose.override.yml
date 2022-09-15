@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  boutiquesfinder:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:64169;http://+:80
+    ports:
+      - "64169:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

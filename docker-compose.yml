@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  boutiquesfinder:
+    container_name: boutiquesfinder
+    image: ${DOCKER_REGISTRY-}boutiquesfinderwebapi
+    build:
+      context: .
+      dockerfile: BoutiquesFinder/Dockerfile
+    ports:
+    - "64169:80"
